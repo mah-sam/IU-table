@@ -1,0 +1,28 @@
+{
+    "manifest_version": 3,
+    "name": "IU Table",
+    "version": "1.0",
+  
+    "description": "Creates a table to display the subjects according to weekdays instead of the default on the IU website",
+  
+    "icons": {
+      "32": "icons/32.png",
+      "48": "icons/48.png",
+      "64": "icons/64.png",
+      "96": "icons/96.png",
+      "128": "icons/128.png"
+    },
+
+    "content_scripts": [
+      {
+        "matches": ["https://eduportal.iu.edu.sa/iu/ui/student/homeIndex.faces", 
+          "https://eduportal.iu.edu.sa/iu/ui/student/student_schedule/index/studentScheduleIndex.faces"],
+        "js": ["beautify.js"],
+        "run_at": "document_idle"
+      }
+    ],
+
+    "permissions": [
+      "storage"
+    ]
+}
